@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="GameLamp">
+      <UniqueIdentifier>{E9A85732-D575-B23D-FE8E-A0E5EABAE7CB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameLamp\Core">
+      <UniqueIdentifier>{E1C65B46-4D87-D77C-16C2-20FA82411C59}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameLamp\Event">
+      <UniqueIdentifier>{FA74FC11-E642-F017-CFD6-603EBB43CC7C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameLamp\Platform">
+      <UniqueIdentifier>{5DFBC0FC-C911-BF92-1289-4AB47EDE8F1A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameLamp\Platform\Windows">
+      <UniqueIdentifier>{97B2CE96-0375-0221-4C25-91ADB826DBFE}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\GameLamp.h" />
+    <ClInclude Include="src\GameLamp\Core\Application.h">
+      <Filter>GameLamp\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameLamp\Core\Assert.h">
+      <Filter>GameLamp\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameLamp\Core\Base.h">
+      <Filter>GameLamp\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameLamp\Core\Core.h">
+      <Filter>GameLamp\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameLamp\Core\EntryPoint.h">
+      <Filter>GameLamp\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameLamp\Core\KeyCode.h">
+      <Filter>GameLamp\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameLamp\Core\Log.h">
+      <Filter>GameLamp\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameLamp\Core\PlatformDetection.h">
+      <Filter>GameLamp\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameLamp\Core\Window.h">
+      <Filter>GameLamp\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameLamp\Event\ApplicationEvent.h">
+      <Filter>GameLamp\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameLamp\Event\Event.h">
+      <Filter>GameLamp\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameLamp\Event\KeyEvent.h">
+      <Filter>GameLamp\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameLamp\Event\MouseEvent.h">
+      <Filter>GameLamp\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameLamp\Platform\Windows\WindowsWindow.h">
+      <Filter>GameLamp\Platform\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\pch.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GameLamp\Core\Application.cpp">
+      <Filter>GameLamp\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameLamp\Core\Log.cpp">
+      <Filter>GameLamp\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameLamp\Platform\Windows\WindowsWindow.cpp">
+      <Filter>GameLamp\Platform\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pch.cpp" />
+  </ItemGroup>
+</Project>

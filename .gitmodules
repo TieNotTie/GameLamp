@@ -1,0 +1,6 @@
+[submodule "GameLamp/vendor/spdlog"]
+	path = GameLamp/vendor/spdlog
+	url = https://github.com/gabime/spdlog
+[submodule "GameLamp/vendor/GLFW"]
+	path = GameLamp/vendor/GLFW
+	url = https://github.com/TheCherno/glfw
