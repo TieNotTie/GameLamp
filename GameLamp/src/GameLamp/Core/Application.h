@@ -1,7 +1,11 @@
 #pragma once
 #include "pch.h"
 
-#include "Core.h"
+#include "GameLamp/Core/Core.h"
+#include "GameLamp/Core/LayerStack.h"
+#include "GameLamp/Core/Window.h"
+#include "GameLamp/Event/Event.h"
+#include "GameLamp/Event/ApplicationEvent.h"
 
 namespace GameLamp {
 
@@ -11,11 +15,20 @@ namespace GameLamp {
 	public:
 	    Application();
 	    virtual ~Application();
-
 	    void run();
+		void onEvent(Event& e);
+
+		void pushLayer(Layer* layer);
+		void pushOverlay(Layer* overlay);
+
+	private:
+		bool onWindowCloseEvent(WindowCloseEvent& e);
+		bool onWindowResizeEvent(WindowResizeEvent& e);
+
 	private:
 		bool m_Running {true};
 		std::unique_ptr<Window> m_Window;
+		LayerStack m_LayerStack;
 	};
 
 	// HAS TO BE DEFINED IN CLIENT APP!

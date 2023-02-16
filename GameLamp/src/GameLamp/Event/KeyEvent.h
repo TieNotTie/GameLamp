@@ -44,6 +44,7 @@ namespace GameLamp {
 
 	class GL_API KeyReleasedEvent final : public KeyEvent
 	{
+	public:
 		KeyReleasedEvent(KeyCode code)
 			: KeyEvent{code}
 		{}

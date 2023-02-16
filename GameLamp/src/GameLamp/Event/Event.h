@@ -35,15 +35,16 @@ namespace GameLamp {
 
 	class GL_API Event
 	{
-		friend class EventDispatcher;
 	public:
 		virtual ~Event() = default;
+
+		bool Handled = false;
 
 		virtual EventType getEventType() const = 0;
 		virtual std::string getName() const = 0;
 		virtual uint8_t getCategoryFlags() const = 0;
 //#ifdef GL_DEBUG
-		virtual std::string getDebugInfo() const { return getName(); }
+		virtual std::string getDebugInfo() const { return "Event: " + getName(); }
 //#endif
 
 		bool isInCategory(EventCategory category)
@@ -51,8 +52,6 @@ namespace GameLamp {
 			return getCategoryFlags() & category;
 		}
 
-	protected:
-		bool m_Handled = false;
 	};
 
 	class EventDispatcher
@@ -66,14 +65,15 @@ namespace GameLamp {
 		bool dispatch(const F& func)
 		{
 			// Maybe should be removed not in Debug mode
-			if (!IS_BASE_OF<Event, T>())
-			{
-				// TODO: Drop an assert
-			}
+			//if (!IS_BASE_OF<Event, T>())
+			//{
+			//	// TODO: Drop an assert
+			//	return false;
+			//}
 
-			if (m_Event.getEventType() == T::GetStaticType())
+			if (m_Event.getEventType() == T::getStaticType())
 			{
-				m_Event.m_Handled |= func(static_cast<T&>(m_Event));
+				m_Event.Handled |= func(static_cast<T&>(m_Event));
 				return true;
 			}
 			return false;

@@ -56,26 +56,27 @@ project "GameLamp"
 
 		defines
 		{
-			-- "GL_PLATFORM_WINDOWS",
 			"GL_BULD_DLL"
 		}
 
 		postbuildcommands
 		{
 			("xcopy \"..\\bin\\Debug-windows-x86_64\\GameLamp\\GameLamp.dll\" \"..\\bin\\Debug-windows-x86_64\\Sandbox\" /q /e /y /i")
-			-- "{COPY} %{cfg.buildtarget} ..bin/" .. outputdir .. "/Sandbox"
 		}
 
 	filter "configurations:Debug"
 		defines "GL_DEBUG"
+		buildoptions "/MDd"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "GL_RELEASE"
+		buildoptions "/MD"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "GL_DIST"
+		buildoptions "/MD"
 		optimize "On"
 
 	filter { "system:windows", "configurations:Release"}
@@ -112,22 +113,20 @@ project "Sandbox"
 		staticruntime "On"
 		systemversion "latest"
 
-		defines
-		{
-			"GL_PLATFORM_WINDOWS"
-		}
-
 	filter "configurations:Debug"
 		defines "GL_DEBUG"
+		buildoptions "/MDd"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "GL_RELEASE"
+		buildoptions "/MD"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "GL_DIST"
+		buildoptions "/MD"
 		optimize "On"
 
-	filter { "system:windows", "configurations:Release"}
-		buildoptions "/MT"
+	-- filter { "system:windows", "configurations:Release"}
+	-- 	buildoptions "/MT"

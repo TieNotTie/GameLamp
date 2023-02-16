@@ -37,6 +37,12 @@
     <ClInclude Include="src\GameLamp\Core\KeyCode.h">
       <Filter>GameLamp\Core</Filter>
     </ClInclude>
+    <ClInclude Include="src\GameLamp\Core\Layer.h">
+      <Filter>GameLamp\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameLamp\Core\LayerStack.h">
+      <Filter>GameLamp\Core</Filter>
+    </ClInclude>
     <ClInclude Include="src\GameLamp\Core\Log.h">
       <Filter>GameLamp\Core</Filter>
     </ClInclude>
@@ -65,6 +71,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\GameLamp\Core\Application.cpp">
+      <Filter>GameLamp\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameLamp\Core\Layer.cpp">
+      <Filter>GameLamp\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameLamp\Core\LayerStack.cpp">
       <Filter>GameLamp\Core</Filter>
     </ClCompile>
     <ClCompile Include="src\GameLamp\Core\Log.cpp">
