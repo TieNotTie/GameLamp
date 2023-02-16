@@ -7,8 +7,7 @@
 #include "GameLamp/Event/ApplicationEvent.h"
 #include "GameLamp/Platform/Windows/WindowsWindow.h"
 
-#include "GLFW/glfw3.h"
-
+#include "glad/glad.h"
 
 namespace GameLamp {
 

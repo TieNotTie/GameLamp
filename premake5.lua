@@ -13,8 +13,10 @@ workspace "GameLamp"
 -- Include directories relative to the Solution root
 IncludeDir = {}
 IncludeDir["GLFW"] = "GameLamp/vendor/GLFW/include"
+IncludeDir["GLAD"] = "GameLamp/vendor/GLAD/include"
 
 include "GameLamp/vendor/GLFW"
+include "GameLamp/vendor/GLAD"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
@@ -40,12 +42,14 @@ project "GameLamp"
 	{
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
-		"%{IncludeDir.GLFW}"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.GLAD}"
 	}
 
 	links
 	{
 		"GLFW",
+		"GLAD",
 		"opengl32.lib"
 	}
 
@@ -56,7 +60,8 @@ project "GameLamp"
 
 		defines
 		{
-			"GL_BULD_DLL"
+			"GL_BULD_DLL",
+			"GLFW_INCLUDE_NONE"
 		}
 
 		postbuildcommands

@@ -5,6 +5,8 @@
 #include "GameLamp/Event/KeyEvent.h"
 #include "GameLamp/Event/MouseEvent.h"
 
+#include "glad/glad.h"
+
 namespace GameLamp {
 
 	static bool s_GLFWInitialized = false;
@@ -49,6 +51,8 @@ namespace GameLamp {
 		
 		m_Window = glfwCreateWindow((int)m_Data.Width, (int)m_Data.Height, m_Data.Title.c_str(), nullptr, nullptr);
 		glfwMakeContextCurrent(m_Window);
+		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+		GL_CORE_ASSERT(status, "Failed to initialize GLAD!");
 		glfwSetWindowUserPointer(m_Window, (void*)&m_Data);
 		setVSync(true);
 
