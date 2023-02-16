@@ -4,3 +4,6 @@
 [submodule "GameLamp/vendor/GLFW"]
 	path = GameLamp/vendor/GLFW
 	url = https://github.com/TheCherno/glfw
+[submodule "GameLamp/vendor/ImGui"]
+	path = GameLamp/vendor/ImGui
+	url = https://github.com/ocornut/imgui.git

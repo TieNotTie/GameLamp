@@ -21,6 +21,9 @@ namespace GameLamp {
 		void pushLayer(Layer* layer);
 		void pushOverlay(Layer* overlay);
 
+		inline Window& getWindow() { return *m_Window; }
+		static inline Application& get() { return *s_Instance; }
+
 	private:
 		bool onWindowCloseEvent(WindowCloseEvent& e);
 		bool onWindowResizeEvent(WindowResizeEvent& e);
@@ -29,6 +32,8 @@ namespace GameLamp {
 		bool m_Running {true};
 		std::unique_ptr<Window> m_Window;
 		LayerStack m_LayerStack;
+	private:
+		static Application* s_Instance;
 	};
 
 	// HAS TO BE DEFINED IN CLIENT APP!

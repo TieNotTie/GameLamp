@@ -59,4 +59,21 @@ namespace GameLamp {
 		EVENT_CLASS_TYPE(KeyReleased)
 	};
 
+	class GL_API KeyTypedEvent final : public KeyEvent
+	{
+	public:
+		KeyTypedEvent(KeyCode code)
+			: KeyEvent{code}
+		{}
+
+		virtual std::string getDebugInfo() const override
+		{
+			std::stringstream ss;
+			ss << "KeyTypedEvent: " << static_cast<uint16_t>(m_KeyCode);
+			return ss.str();
+		}
+
+		EVENT_CLASS_TYPE(KeyTyped)
+	};
+
 }

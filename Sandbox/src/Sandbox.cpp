@@ -16,7 +16,7 @@ public:
 
 	void onEvent(GameLamp::Event& e) override
 	{
-		GL_CLIENT_INFO("ExampleLayer1::onEvent: {0}", e);
+		//GL_CLIENT_INFO("ExampleLayer1::onEvent: {0}", e);
 	}
 };
 
@@ -26,6 +26,7 @@ public:
 	Sandbox()
 	{
 		pushLayer(new ExampleLayer());
+		pushOverlay(new GameLamp::ImGuiLayer());
 	}
 
 	~Sandbox()

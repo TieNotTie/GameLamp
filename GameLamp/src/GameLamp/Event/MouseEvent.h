@@ -45,6 +45,7 @@ namespace GameLamp {
 
 	class GL_API MouseButtonEvent : public Event
 	{
+	public:
 		uint16_t getMouseButton() const { return m_MouseButton; }
 
 		EVENT_CLASS_CATEGORY(EventCategoryInput | EventCategoryMouse)

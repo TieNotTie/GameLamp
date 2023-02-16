@@ -14,9 +14,11 @@ workspace "GameLamp"
 IncludeDir = {}
 IncludeDir["GLFW"] = "GameLamp/vendor/GLFW/include"
 IncludeDir["GLAD"] = "GameLamp/vendor/GLAD/include"
+IncludeDir["ImGui"] = "GameLamp/vendor/ImGui"
 
 include "GameLamp/vendor/GLFW"
 include "GameLamp/vendor/GLAD"
+include "GameLamp/vendor/ImGui"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
@@ -43,13 +45,15 @@ project "GameLamp"
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
 		"%{IncludeDir.GLFW}",
-		"%{IncludeDir.GLAD}"
+		"%{IncludeDir.GLAD}",
+		"%{IncludeDir.ImGui}",
 	}
 
 	links
 	{
 		"GLFW",
 		"GLAD",
+		"ImGui",
 		"opengl32.lib"
 	}
 

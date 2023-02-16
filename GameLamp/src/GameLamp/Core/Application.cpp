@@ -11,9 +11,14 @@
 
 namespace GameLamp {
 
+	Application* Application::s_Instance = nullptr;
+
 	Application::Application()
 		: m_Window{std::unique_ptr<Window>(Window::create())}
 	{
+		GL_CORE_ASSERT(!s_Instance, "Application already exists!");
+		s_Instance = this;
+
 		m_Window->setEventCallback(GL_BIND_EVENT_FN(Application::onEvent));
 	}
 
@@ -55,11 +60,13 @@ namespace GameLamp {
 	void Application::pushLayer(Layer* layer)
 	{
 		m_LayerStack.pushLayer(layer);
+		layer->onAttach();
 	}
 
 	void Application::pushOverlay(Layer* overlay)
 	{
 		m_LayerStack.pushOverlay(overlay);
+		overlay->onAttach();
 	}
 
 	bool Application::onWindowCloseEvent(WindowCloseEvent&)
