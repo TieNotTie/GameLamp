@@ -15,6 +15,7 @@ IncludeDir = {}
 IncludeDir["GLFW"] = "GameLamp/vendor/GLFW/include"
 IncludeDir["GLAD"] = "GameLamp/vendor/GLAD/include"
 IncludeDir["ImGui"] = "GameLamp/vendor/ImGui"
+IncludeDir["glm"] = "GameLamp/vendor/glm"
 
 include "GameLamp/vendor/GLFW"
 include "GameLamp/vendor/GLAD"
@@ -37,7 +38,9 @@ project "GameLamp"
 	{
 		"%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.c",
-		"%{prj.name}/src/**.cpp"
+		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/vendor/glm/glm/**.hpp",
+		"%{prj.name}/vendor/glm/glm/**.inl",
 	}
 
 	includedirs
@@ -47,6 +50,7 @@ project "GameLamp"
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.GLAD}",
 		"%{IncludeDir.ImGui}",
+		"%{IncludeDir.glm}",
 	}
 
 	links
@@ -109,7 +113,8 @@ project "Sandbox"
 	includedirs
 	{
 		"GameLamp/vendor/spdlog/include",
-		"GameLamp/src"
+		"GameLamp/src",
+		"%{IncludeDir.glm}",
 	}
 
 	links

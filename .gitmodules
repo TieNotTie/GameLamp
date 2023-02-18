@@ -7,3 +7,6 @@
 [submodule "GameLamp/vendor/ImGui"]
 	path = GameLamp/vendor/ImGui
 	url = https://github.com/ocornut/imgui.git
+[submodule "GameLamp/vendor/glm"]
+	path = GameLamp/vendor/glm
+	url = https://github.com/g-truc/glm.git
