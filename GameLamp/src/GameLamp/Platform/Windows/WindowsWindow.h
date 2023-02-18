@@ -19,6 +19,8 @@ namespace GameLamp {
 		virtual void setEventCallback(const EventCallback& callback) override { m_Data.s_EventCallback = callback; }
 		virtual void setVSync(bool enabled) override;
 		virtual bool isVSync() const override;
+
+		inline virtual void* getNativeWindow() const override { return (void*)m_Window; }
 		
 	private:
 		virtual void init(const WindowProps& props);

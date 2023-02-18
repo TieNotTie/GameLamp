@@ -6,6 +6,7 @@
 #include "GameLamp/Core/Window.h"
 #include "GameLamp/Event/ApplicationEvent.h"
 #include "GameLamp/Platform/Windows/WindowsWindow.h"
+#include "GameLamp/Core/Input.h"
 
 #include "glad/glad.h"
 

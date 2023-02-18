@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Event.h"
-#include "GameLamp/Core/KeyCode.h"
+#include "GameLamp/Core/KeyCodes.h"
 
 namespace GameLamp {
 

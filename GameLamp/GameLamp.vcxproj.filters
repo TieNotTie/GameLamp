@@ -40,7 +40,7 @@
     <ClInclude Include="src\GameLamp\Core\EntryPoint.h">
       <Filter>GameLamp\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\GameLamp\Core\KeyCode.h">
+    <ClInclude Include="src\GameLamp\Core\KeyCodes.h">
       <Filter>GameLamp\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\GameLamp\Core\Layer.h">
@@ -80,6 +80,9 @@
       <Filter>GameLamp\Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\pch.h" />
+    <ClInclude Include="src\GameLamp\Core\Input.h" />
+    <ClInclude Include="src\GameLamp\Platform\Windows\WindowsInput.h" />
+    <ClInclude Include="src\GameLamp\Core\MouseButtonCodes.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\GameLamp\Core\Application.cpp">
@@ -107,5 +110,6 @@
       <Filter>GameLamp\Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\pch.cpp" />
+    <ClCompile Include="src\GameLamp\Platform\Windows\WindowsInput.cpp" />
   </ItemGroup>
 </Project>
