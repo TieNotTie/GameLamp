@@ -7,6 +7,7 @@
 #include "GameLamp/Event/Event.h"
 #include "GameLamp/Event/ApplicationEvent.h"
 #include "GameLamp/ImGui/ImGuiLayer.h"
+#include "GameLamp/Renderer/Shader.h"
 
 namespace GameLamp {
 
@@ -36,6 +37,8 @@ namespace GameLamp {
 		LayerStack m_LayerStack;
 	private:
 		static Application* s_Instance;
+		unsigned int m_VertexArray, m_VertexBuffer, m_IndexBuffer;
+		std::unique_ptr<Shader> m_Shader;
 	};
 
 	// HAS TO BE DEFINED IN CLIENT APP!

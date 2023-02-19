@@ -1,9 +1,11 @@
 #pragma once
 #include "GameLamp/Core/Window.h"
 
-#include <GLFW/glfw3.h>
+struct GLFWwindow;
 
 namespace GameLamp {
+
+	class GraphicsContext;
 
 	class WindowsWindow : public Window
 	{
@@ -29,6 +31,7 @@ namespace GameLamp {
 
 	private:
 		GLFWwindow* m_Window;
+		GraphicsContext* m_Context;
 
 		struct WindowData
 		{

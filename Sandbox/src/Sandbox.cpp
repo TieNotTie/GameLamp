@@ -14,9 +14,7 @@ public:
 
 	void onImGuiRender() override
 	{
-		ImGui::Begin("Test");
-		ImGui::Text("Hello World");
-		ImGui::End();
+
 	}
 
 	void onUpdate() override
@@ -30,14 +28,14 @@ public:
 	void onEvent(GameLamp::Event& e) override
 	{
 		//GL_CLIENT_INFO("ExampleLayer1::onEvent: {0}", e);
-		GameLamp::EventDispatcher dispatcher(e);
+		//GameLamp::EventDispatcher dispatcher(e);
 
-		dispatcher.dispatch<GameLamp::MouseButtonReleasedEvent>([](GameLamp::MouseButtonReleasedEvent& event) -> bool
-			{
-				GL_CLIENT_INFO(event);
-				return true;
-			}
-		);
+		//dispatcher.dispatch<GameLamp::MouseButtonReleasedEvent>([](GameLamp::MouseButtonReleasedEvent& event) -> bool
+		//	{
+		//		GL_CLIENT_INFO(event);
+		//		return true;
+		//	}
+		//);
 
 	}
 };

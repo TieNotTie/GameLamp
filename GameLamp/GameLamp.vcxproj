@@ -140,6 +140,7 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\GameLamp\Renderer\Shader.h" />
     <ClInclude Include="src\GameLamp.h" />
     <ClInclude Include="src\GameLamp\Core\Application.h" />
     <ClInclude Include="src\GameLamp\Core\Assert.h" />
@@ -159,8 +160,10 @@
     <ClInclude Include="src\GameLamp\Event\KeyEvent.h" />
     <ClInclude Include="src\GameLamp\Event\MouseEvent.h" />
     <ClInclude Include="src\GameLamp\ImGui\ImGuiLayer.h" />
+    <ClInclude Include="src\GameLamp\Platform\OpenGL\OpenGLContext.h" />
     <ClInclude Include="src\GameLamp\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="src\GameLamp\Platform\Windows\WindowsWindow.h" />
+    <ClInclude Include="src\GameLamp\Renderer\GraphicsContext.h" />
     <ClInclude Include="src\pch.h" />
     <ClInclude Include="vendor\glm\glm\common.hpp" />
     <ClInclude Include="vendor\glm\glm\detail\_features.hpp" />
@@ -580,12 +583,14 @@
     <ClInclude Include="vendor\glm\glm\vector_relational.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\GameLamp\Renderer\Shader.cpp" />
     <ClCompile Include="src\GameLamp\Core\Application.cpp" />
     <ClCompile Include="src\GameLamp\Core\Layer.cpp" />
     <ClCompile Include="src\GameLamp\Core\LayerStack.cpp" />
     <ClCompile Include="src\GameLamp\Core\Log.cpp" />
     <ClCompile Include="src\GameLamp\ImGui\ImGuiBuild.cpp" />
     <ClCompile Include="src\GameLamp\ImGui\ImGuiLayer.cpp" />
+    <ClCompile Include="src\GameLamp\Platform\OpenGL\OpenGLContext.cpp" />
     <ClCompile Include="src\GameLamp\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="src\GameLamp\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\pch.cpp">

@@ -1359,6 +1359,9 @@
     <ClInclude Include="vendor\glm\glm\vector_relational.hpp">
       <Filter>vendor\glm\glm</Filter>
     </ClInclude>
+    <ClInclude Include="src\GameLamp\Renderer\GraphicsContext.h" />
+    <ClInclude Include="src\GameLamp\Platform\OpenGL\OpenGLContext.h" />
+    <ClInclude Include="src\GameLamp\Renderer\Shader.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\GameLamp\Core\Application.cpp">
@@ -1388,5 +1391,7 @@
     <ClCompile Include="src\pch.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="src\GameLamp\Platform\OpenGL\OpenGLContext.cpp" />
+    <ClCompile Include="src\GameLamp\Renderer\Shader.cpp" />
   </ItemGroup>
 </Project>

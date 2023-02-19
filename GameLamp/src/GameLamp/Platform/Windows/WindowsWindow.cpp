@@ -4,8 +4,9 @@
 #include "GameLamp/Event/ApplicationEvent.h"
 #include "GameLamp/Event/KeyEvent.h"
 #include "GameLamp/Event/MouseEvent.h"
+#include "GameLamp/Platform/OpenGL/OpenGLContext.h"
 
-#include "glad/glad.h"
+#include <GLFW/glfw3.h>
 
 namespace GameLamp {
 
@@ -37,6 +38,7 @@ namespace GameLamp {
 		m_Data.Width = props.Width;
 		m_Data.Height = props.Height;
 
+
 		GL_CORE_INFO("Creating window {0}, ({1}, {2})", m_Data.Title, m_Data.Width, m_Data.Height);
 
 		if (!s_GLFWInitialized)
@@ -50,9 +52,10 @@ namespace GameLamp {
 		glfwSetErrorCallback(GLFWErrorCallback);
 		
 		m_Window = glfwCreateWindow((int)m_Data.Width, (int)m_Data.Height, m_Data.Title.c_str(), nullptr, nullptr);
-		glfwMakeContextCurrent(m_Window);
-		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
-		GL_CORE_ASSERT(status, "Failed to initialize GLAD!");
+	
+		m_Context = new OpenGLContext(m_Window);
+		m_Context->init();
+
 		glfwSetWindowUserPointer(m_Window, (void*)&m_Data);
 		setVSync(true);
 
@@ -165,7 +168,7 @@ namespace GameLamp {
 	void WindowsWindow::onUpdate()
 	{
 		glfwPollEvents();
-		glfwSwapBuffers(m_Window);
+		m_Context->swapBuffers();
 	}
 
 	void WindowsWindow::setVSync(bool enabled)

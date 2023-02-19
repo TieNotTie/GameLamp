@@ -7,8 +7,8 @@
 #include "backends/imgui_impl_glfw.h"
 
 #include <imgui.h>
-/*
-#include <glad/glad.h>*/
+
+#include <glad/glad.h>
 #include <glfw/glfw3.h> 
 
 namespace GameLamp {
@@ -94,6 +94,19 @@ namespace GameLamp {
 	{
 		static bool show = true;
 		ImGui::ShowDemoWindow(&show);
+
+		ImGui::Begin("Renderer");
+
+		//GL_CORE_INFO("OpenGL Info:");
+		//GL_CORE_INFO("  Vendor: {0}", glGetString(GL_VENDOR));
+		//GL_CORE_INFO("  Renderer: {0}", glGetString(GL_RENDERER));
+		//GL_CORE_INFO("  Version: {0}", glGetString(GL_VERSION));
+
+		ImGui::Text("Vendor: %s", glGetString(GL_VENDOR));
+		ImGui::Text("Renderer: %s", glGetString(GL_RENDERER));
+		ImGui::Text("Version: %s", glGetString(GL_VERSION));
+
+		ImGui::End();
 	}
 
 } // namespace GameLamp 
