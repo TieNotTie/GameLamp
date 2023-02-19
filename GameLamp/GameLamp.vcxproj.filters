@@ -108,6 +108,9 @@
     <ClInclude Include="src\GameLamp\ImGui\ImGuiLayer.h">
       <Filter>src\GameLamp\ImGui</Filter>
     </ClInclude>
+    <ClInclude Include="src\GameLamp\Platform\OpenGL\OpenGLBuffer.h">
+      <Filter>src\GameLamp\Platform\OpenGL</Filter>
+    </ClInclude>
     <ClInclude Include="src\GameLamp\Platform\OpenGL\OpenGLContext.h">
       <Filter>src\GameLamp\Platform\OpenGL</Filter>
     </ClInclude>
@@ -117,7 +120,13 @@
     <ClInclude Include="src\GameLamp\Platform\Windows\WindowsWindow.h">
       <Filter>src\GameLamp\Platform\Windows</Filter>
     </ClInclude>
+    <ClInclude Include="src\GameLamp\Renderer\Buffer.h">
+      <Filter>src\GameLamp\Renderer</Filter>
+    </ClInclude>
     <ClInclude Include="src\GameLamp\Renderer\GraphicsContext.h">
+      <Filter>src\GameLamp\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameLamp\Renderer\Renderer.h">
       <Filter>src\GameLamp\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\GameLamp\Renderer\Shader.h">
@@ -1394,6 +1403,9 @@
     <ClCompile Include="src\GameLamp\ImGui\ImGuiLayer.cpp">
       <Filter>src\GameLamp\ImGui</Filter>
     </ClCompile>
+    <ClCompile Include="src\GameLamp\Platform\OpenGL\OpenGLBuffer.cpp">
+      <Filter>src\GameLamp\Platform\OpenGL</Filter>
+    </ClCompile>
     <ClCompile Include="src\GameLamp\Platform\OpenGL\OpenGLContext.cpp">
       <Filter>src\GameLamp\Platform\OpenGL</Filter>
     </ClCompile>
@@ -1402,6 +1414,12 @@
     </ClCompile>
     <ClCompile Include="src\GameLamp\Platform\Windows\WindowsWindow.cpp">
       <Filter>src\GameLamp\Platform\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameLamp\Renderer\Buffer.cpp">
+      <Filter>src\GameLamp\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameLamp\Renderer\Renderer.cpp">
+      <Filter>src\GameLamp\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\GameLamp\Renderer\Shader.cpp">
       <Filter>src\GameLamp\Renderer</Filter>

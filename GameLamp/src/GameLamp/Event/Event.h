@@ -64,13 +64,6 @@ namespace GameLamp {
 		template<typename T, typename F>
 		bool dispatch(const F& func)
 		{
-			// Maybe should be removed not in Debug mode
-			//if (!IS_BASE_OF<Event, T>())
-			//{
-			//	// TODO: Drop an assert
-			//	return false;
-			//}
-
 			if (m_Event.getEventType() == T::getStaticType())
 			{
 				m_Event.Handled |= func(static_cast<T&>(m_Event));
