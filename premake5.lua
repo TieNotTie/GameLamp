@@ -13,12 +13,12 @@ workspace "GameLamp"
 IncludeDir = {}
 IncludeDir["GLFW"] = "GameLamp/vendor/GLFW/include"
 IncludeDir["GLAD"] = "GameLamp/vendor/GLAD/include"
-IncludeDir["ImGui"] = "GameLamp/vendor/ImGui"
+IncludeDir["ImGui"] = "GameLamp/vendor/imgui"
 IncludeDir["glm"] = "GameLamp/vendor/glm"
 
 include "GameLamp/vendor/GLFW"
 include "GameLamp/vendor/GLAD"
-include "GameLamp/vendor/ImGui"
+include "GameLamp/vendor/imgui"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 

@@ -1,8 +1,8 @@
 [submodule "GameLamp/vendor/spdlog"]
 	path = GameLamp/vendor/spdlog
 	url = https://github.com/gabime/spdlog
-[submodule "GameLamp/vendor/ImGui"]
-	path = GameLamp/vendor/ImGui
+[submodule "GameLamp/vendor/imgui"]
+	path = GameLamp/vendor/imgui
 	url = https://github.com/ocornut/imgui.git
 [submodule "GameLamp/vendor/glm"]
 	path = GameLamp/vendor/glm
