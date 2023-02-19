@@ -1,0 +1,12 @@
+[submodule "GameLamp/vendor/spdlog"]
+	path = GameLamp/vendor/spdlog
+	url = https://github.com/gabime/spdlog
+[submodule "GameLamp/vendor/ImGui"]
+	path = GameLamp/vendor/ImGui
+	url = https://github.com/ocornut/imgui.git
+[submodule "GameLamp/vendor/glm"]
+	path = GameLamp/vendor/glm
+	url = https://github.com/g-truc/glm.git
+[submodule "GameLamp/vendor/GLFW"]
+	path = GameLamp/vendor/GLFW
+	url = git@github.com:Xoceny/glfw.git
