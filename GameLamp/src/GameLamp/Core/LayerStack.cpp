@@ -16,11 +16,13 @@ namespace GameLamp {
 	{
 		m_Layers.emplace(m_Layers.begin() + m_LayerInsertIndex, layer);
 		++m_LayerInsertIndex;
+		layer->onAttach();
 	}
 
 	void LayerStack::pushOverlay(Layer* overlay)
 	{
 		m_Layers.emplace_back(overlay);
+		overlay->onAttach();
 	}
 
 	void LayerStack::popLayer(Layer* layer)
@@ -28,9 +30,9 @@ namespace GameLamp {
 		auto it = std::find(m_Layers.begin(), m_Layers.end(), layer);
 		if (it != m_Layers.begin() + m_LayerInsertIndex)
 		{
-			layer->onDetach();
 			m_Layers.erase(it);
 			--m_LayerInsertIndex;
+			layer->onDetach();
 		}
 	}
 
@@ -39,8 +41,8 @@ namespace GameLamp {
 		auto it = std::find(m_Layers.begin() + m_LayerInsertIndex, m_Layers.end(), overlay);
 		if (it != m_Layers.end())
 		{
-			overlay->onDetach();
 			m_Layers.erase(it);
+			overlay->onDetach();
 		}
 	}
 

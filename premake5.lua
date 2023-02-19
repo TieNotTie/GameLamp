@@ -9,7 +9,6 @@ workspace "GameLamp"
 		"Release",
 		"Dist"
 	}
-
 -- Include directories relative to the Solution root
 IncludeDir = {}
 IncludeDir["GLFW"] = "GameLamp/vendor/GLFW/include"
@@ -25,8 +24,10 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 project "GameLamp"
 	location "GameLamp"
-	kind "SharedLib"
+	kind "StaticLib"
 	language "C++"
+	cppdialect "C++17"
+	staticruntime "on"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("intermediates/" .. outputdir .. "/%{prj.name}")
@@ -42,6 +43,12 @@ project "GameLamp"
 		"%{prj.name}/vendor/glm/glm/**.hpp",
 		"%{prj.name}/vendor/glm/glm/**.inl",
 	}
+
+	defines
+		{
+			"_CRT_SECURE_NO_WARNINGS",
+			"GLFW_INCLUDE_NONE"
+		}
 
 	includedirs
 	{
@@ -62,8 +69,7 @@ project "GameLamp"
 	}
 
 	filter "system:windows"
-		cppdialect "C++17"
-		staticruntime "On"
+		staticruntime "on"
 		systemversion "latest"
 
 		defines
@@ -72,33 +78,28 @@ project "GameLamp"
 			"GLFW_INCLUDE_NONE"
 		}
 
-		postbuildcommands
-		{
-			("xcopy \"..\\bin\\Debug-windows-x86_64\\GameLamp\\GameLamp.dll\" \"..\\bin\\Debug-windows-x86_64\\Sandbox\" /q /e /y /i")
-		}
-
 	filter "configurations:Debug"
 		defines "GL_DEBUG"
-		buildoptions "/MDd"
-		symbols "On"
+		runtime "Debug"
+		symbols "on"
 
 	filter "configurations:Release"
 		defines "GL_RELEASE"
-		buildoptions "/MD"
-		optimize "On"
+		runtime "Release"
+		optimize "on"
 
 	filter "configurations:Dist"
 		defines "GL_DIST"
-		buildoptions "/MD"
-		optimize "On"
+		runtime "Release"
+		optimize "on"
 
-	filter { "system:windows", "configurations:Release"}
-		buildoptions "/MT"
 
 project "Sandbox"
 	location "Sandbox"
 	kind "ConsoleApp"
 	language "C++"
+	cppdialect "C++17"
+	staticruntime "on"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("intermediates/" .. outputdir .. "/%{prj.name}")
@@ -115,32 +116,31 @@ project "Sandbox"
 		"GameLamp/vendor/spdlog/include",
 		"GameLamp/src",
 		"%{IncludeDir.glm}",
+		"%{IncludeDir.ImGui}",
 	}
 
 	links
 	{
-		"GameLamp"
+		"GameLamp",
+		"ImGui",
 	}
 
 	filter "system:windows"
-		cppdialect "C++17"
-		staticruntime "On"
+		staticruntime "on"
 		systemversion "latest"
 
 	filter "configurations:Debug"
 		defines "GL_DEBUG"
-		buildoptions "/MDd"
-		symbols "On"
+		runtime "Debug"
+		symbols "on"
 
 	filter "configurations:Release"
 		defines "GL_RELEASE"
-		buildoptions "/MD"
-		optimize "On"
+		runtime "Release"
+		optimize "on"
 
 	filter "configurations:Dist"
 		defines "GL_DIST"
-		buildoptions "/MD"
-		optimize "On"
+		runtime "Release"
+		optimize "on"
 
-	-- filter { "system:windows", "configurations:Release"}
-	-- 	buildoptions "/MT"

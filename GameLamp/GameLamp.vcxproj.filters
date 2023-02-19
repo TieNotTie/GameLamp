@@ -19,9 +19,6 @@
     <Filter Include="src\GameLamp\Platform">
       <UniqueIdentifier>{3444CF51-A0B0-8A4C-69A4-22AAD5CFACB4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\GameLamp\Platform\OpenGL">
-      <UniqueIdentifier>{E8AA36AF-D465-265B-7D1D-9FA569B770EB}</UniqueIdentifier>
-    </Filter>
     <Filter Include="src\GameLamp\Platform\Windows">
       <UniqueIdentifier>{6EE227EE-DAFA-0E18-A3A7-9EB10F7FA3B1}</UniqueIdentifier>
     </Filter>
@@ -104,9 +101,6 @@
     </ClInclude>
     <ClInclude Include="src\GameLamp\ImGui\ImGuiLayer.h">
       <Filter>src\GameLamp\ImGui</Filter>
-    </ClInclude>
-    <ClInclude Include="src\GameLamp\Platform\OpenGL\ImGuiOpenGLRenderer.h">
-      <Filter>src\GameLamp\Platform\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="src\GameLamp\Platform\Windows\WindowsInput.h">
       <Filter>src\GameLamp\Platform\Windows</Filter>
@@ -1384,9 +1378,6 @@
     </ClCompile>
     <ClCompile Include="src\GameLamp\ImGui\ImGuiLayer.cpp">
       <Filter>src\GameLamp\ImGui</Filter>
-    </ClCompile>
-    <ClCompile Include="src\GameLamp\Platform\OpenGL\ImGuiOpenGLRenderer.cpp">
-      <Filter>src\GameLamp\Platform\OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="src\GameLamp\Platform\Windows\WindowsInput.cpp">
       <Filter>src\GameLamp\Platform\Windows</Filter>

@@ -21,9 +21,14 @@ namespace GameLamp {
 		s_Instance = this;
 
 		m_Window->setEventCallback(GL_BIND_EVENT_FN(Application::onEvent));
+
+		m_ImGuiLayer = new ImGuiLayer();
+		pushOverlay(m_ImGuiLayer);
 	}
 
-	Application::~Application() {}
+	Application::~Application()
+	{
+	}
 
 	void Application::run()
 	{
@@ -35,10 +40,13 @@ namespace GameLamp {
 			glClearColor(0, 0, 1, 1);
 			glClear(GL_COLOR_BUFFER_BIT);
 
-			for (auto layer : m_LayerStack)
-			{
+			for (Layer* layer : m_LayerStack)
 				layer->onUpdate();
-			}
+
+			m_ImGuiLayer->begin();
+			for (Layer* layer : m_LayerStack)
+				layer->onImGuiRender();
+			m_ImGuiLayer->end();
 
 			m_Window->onUpdate();
 		};
@@ -61,13 +69,11 @@ namespace GameLamp {
 	void Application::pushLayer(Layer* layer)
 	{
 		m_LayerStack.pushLayer(layer);
-		layer->onAttach();
 	}
 
 	void Application::pushOverlay(Layer* overlay)
 	{
 		m_LayerStack.pushOverlay(overlay);
-		overlay->onAttach();
 	}
 
 	bool Application::onWindowCloseEvent(WindowCloseEvent&)

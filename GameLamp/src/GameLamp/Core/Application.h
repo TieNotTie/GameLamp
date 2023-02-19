@@ -6,6 +6,7 @@
 #include "GameLamp/Core/Window.h"
 #include "GameLamp/Event/Event.h"
 #include "GameLamp/Event/ApplicationEvent.h"
+#include "GameLamp/ImGui/ImGuiLayer.h"
 
 namespace GameLamp {
 
@@ -31,6 +32,7 @@ namespace GameLamp {
 	private:
 		bool m_Running {true};
 		std::unique_ptr<Window> m_Window;
+		ImGuiLayer* m_ImGuiLayer;
 		LayerStack m_LayerStack;
 	private:
 		static Application* s_Instance;
