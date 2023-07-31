@@ -2,7 +2,7 @@
 
 #include "GameLamp/Core/PlatformDetection.h"
 
-#ifdef GL_DEBUG
+#if defined(GL_DEBUG) || defined(GL_RELEASE)
 #if defined(GL_PLATFORM_WINDOWS)
 #define GL_DEBUGBREAK() __debugbreak()
 #elif defined(GL_PLATFORM_LINUX)

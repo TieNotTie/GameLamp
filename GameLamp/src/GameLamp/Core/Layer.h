@@ -1,6 +1,7 @@
 #pragma once
 
 #include "GameLamp/Core/Core.h"
+#include "GameLamp/Core/Timestep.h"
 #include "GameLamp/Event/Event.h"
 
 namespace GameLamp {
@@ -13,7 +14,7 @@ namespace GameLamp {
 
 		virtual void onAttach() {}
 		virtual void onDetach() {}
-		virtual void onUpdate() {}
+		virtual void onUpdate(Timestep ts) {}
 		virtual void onImGuiRender() {}
 		virtual void onEvent(Event& e)  {}
 

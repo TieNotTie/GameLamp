@@ -14,13 +14,7 @@
 	#define GL_API
 	#endif
 
-	#ifdef GL_ENABLE_ASSERTS
-		#define GL_ASSERT(x, ...) { if (!(x)) { GL_CLIENT_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
-		#define GL_CORE_ASSERT(x, ...) {if (!(x)) { GL_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
-	#else 
-		#define GL_ASSERT(x, ...)
-		#define GL_CORE_ASSERT(x, ...)
-	#endif
+#include "Assert.h"
 
 
 #else 

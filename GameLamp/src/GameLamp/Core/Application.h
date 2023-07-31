@@ -3,20 +3,31 @@
 
 #include "GameLamp/Core/Core.h"
 #include "GameLamp/Core/LayerStack.h"
+#include "GameLamp/Core/Timestep.h"
 #include "GameLamp/Core/Window.h"
 #include "GameLamp/Event/Event.h"
 #include "GameLamp/Event/ApplicationEvent.h"
 #include "GameLamp/ImGui/ImGuiLayer.h"
 #include "GameLamp/Renderer/Shader.h"
 #include "GameLamp/Renderer/Buffer.h"
+#include "GameLamp/Renderer/VertexArray.h"
 
 namespace GameLamp {
 
 	class Window;
 
+	struct ApplicationSpecification
+	{
+		ApplicationSpecification(std::string name, uint32_t width, uint32_t height)
+			: Name{name}, Width{width}, Height{height}
+		{}
+		std::string Name;
+		uint32_t Width = 0, Height = 0;
+	}; 
+
 	class GL_API Application {
 	public:
-	    Application();
+	    Application(const ApplicationSpecification&);
 	    virtual ~Application();
 	    void run();
 		void onEvent(Event& e);
@@ -36,12 +47,11 @@ namespace GameLamp {
 		std::unique_ptr<Window> m_Window;
 		ImGuiLayer* m_ImGuiLayer;
 		LayerStack m_LayerStack;
+		float m_LastFrameTime = 0.0f;
 	private:
+		ApplicationSpecification m_Specification;
 		static Application* s_Instance;
-		unsigned int m_VertexArray;
-		std::unique_ptr<Shader> m_Shader;
-		std::unique_ptr<VertexBuffer> m_VertexBuffer;
-		std::unique_ptr<IndexBuffer> m_IndexBuffer;
+
 	};
 
 	// HAS TO BE DEFINED IN CLIENT APP!

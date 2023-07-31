@@ -1,58 +1,23 @@
 #include <GameLamp.h>
 
-#include <memory>
+#include "GameLamp/Core/EntryPoint.h"
 
-#include <imgui.h>
-
-class ExampleLayer : public GameLamp::Layer
-{
-public:
-	ExampleLayer()
-		: Layer("Sandbox")
-	{
-	}
-
-	void onImGuiRender() override
-	{
-
-	}
-
-	void onUpdate() override
-	{
-		//GL_CLIENT_INFO("ExampleLayer1::onUpdate");
-		if (GameLamp::Input::isKeyPressed(GameLamp::Key::Tab)) {
-			GL_CLIENT_INFO("Tab is pressed");
-		}
-	}
-
-	void onEvent(GameLamp::Event& e) override
-	{
-		//GL_CLIENT_INFO("ExampleLayer1::onEvent: {0}", e);
-		//GameLamp::EventDispatcher dispatcher(e);
-
-		//dispatcher.dispatch<GameLamp::MouseButtonReleasedEvent>([](GameLamp::MouseButtonReleasedEvent& event) -> bool
-		//	{
-		//		GL_CLIENT_INFO(event);
-		//		return true;
-		//	}
-		//);
-
-	}
-};
+#include "SandboxLayer.h"
 
 class Sandbox : public GameLamp::Application 
 {
 public:
-	Sandbox()
+	Sandbox(GameLamp::ApplicationSpecification spec)
+		: GameLamp::Application(spec)
 	{
-		pushLayer(new ExampleLayer());
+		pushLayer(new SandboxLayer());
 	}
 
 	~Sandbox()
 	{}
-
 };
 
 GameLamp::Application* GameLamp::CreateApplication(){
-	return new Sandbox();
+	GameLamp::ApplicationSpecification spec("Sandbox", 1080, 720);
+	return new Sandbox(spec);
 }

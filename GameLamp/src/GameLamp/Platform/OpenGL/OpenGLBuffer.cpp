@@ -26,7 +26,7 @@ namespace GameLamp {
 		glBindBuffer(GL_ARRAY_BUFFER, m_RendererID);
 	}
 
-	void OpenGLVertexBuffer::ubind() const
+	void OpenGLVertexBuffer::unbind() const
 	{
 		glBindBuffer(GL_ARRAY_BUFFER, 0);
 	}
@@ -53,7 +53,7 @@ namespace GameLamp {
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_RendererID);
 	}
 
-	void OpenGLIndexBuffer::ubind() const
+	void OpenGLIndexBuffer::unbind() const
 	{
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 	}

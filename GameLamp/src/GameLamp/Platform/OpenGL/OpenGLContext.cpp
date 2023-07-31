@@ -18,6 +18,8 @@ namespace GameLamp {
 	{
 		glfwMakeContextCurrent(m_WindowHandle);
 		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+		glEnable(GL_DEPTH_TEST);
+		glEnable(GL_LINE_SMOOTH);
 		GL_CORE_ASSERT(status, "Failed to initialize GLAD!");
 	}
 

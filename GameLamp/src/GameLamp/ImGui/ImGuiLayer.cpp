@@ -2,6 +2,7 @@
 #include "ImGuiLayer.h"
 
 #include "GameLamp/Core/Application.h"
+#include "GameLamp/Core/Timestep.h"
 
 #include "backends/imgui_impl_opengl3.h"
 #include "backends/imgui_impl_glfw.h"
@@ -90,10 +91,79 @@ namespace GameLamp {
 
 	}
 
+	float calculateFPS()
+	{
+		static float LastTime = 0.0f;
+		float CurrentTime = Time::getSystemTime();
+		float FrameTime = (CurrentTime - LastTime) * 1000.0f;
+		LastTime = CurrentTime;
+
+		if (FrameTime == 0) FrameTime = 0.001f;
+
+		return 1000.0f / FrameTime;
+	}
+
+	ImVec4&& getTextColor(float FPS)
+	{
+		if (FPS < 59.0f) return std::move(ImVec4(1.0f, 0.0f, 0.0f, 1.0f));
+		else if (FPS < 99.0f) return std::move(ImVec4(1.0f, 0.65f, 0.0f, 1.0f));
+		else return std::move(ImVec4(0.0f, 0.5f, 0.0f, 1.0f));
+	}
+
+	void ImGuiLayer::drawFpsCounter()
+	{
+		static constexpr ImGuiWindowFlags imGuiWindowFlags = 
+			  ImGuiWindowFlags_NoBackground
+			| ImGuiWindowFlags_NoTitleBar
+			| ImGuiWindowFlags_NoResize
+			| ImGuiWindowFlags_NoScrollbar
+			| ImGuiWindowFlags_NoCollapse
+			| ImGuiWindowFlags_AlwaysAutoResize
+			| ImGuiWindowFlags_NoMouseInputs
+			| ImGuiWindowFlags_NoFocusOnAppearing
+			| ImGuiWindowFlags_NoBringToFrontOnFocus
+			| ImGuiWindowFlags_NoDocking;
+		
+		// Limit counter updating on screen
+		static constexpr float UpdateRate = 0.2f;
+
+		// This calculation may be inaccurate 
+		static float LastUpdatedTime = 0.0f;
+		static float FPS = 0.0f;
+		float CurrentTime = Time::getSystemTime();
+
+		if (CurrentTime - LastUpdatedTime >= UpdateRate)
+		{
+			LastUpdatedTime = CurrentTime;
+			FPS = calculateFPS();
+		} else calculateFPS();
+
+
+		// Rework Min and Max displaying: Min And Max should display values only for last N seconds, for example for the last 1 minute
+		//static float MinFps = FPS;
+		//static float MaxFps = FPS;
+
+		//MinFps = MinFps > FPS ? FPS : MinFps;
+		//MaxFps = MaxFps < FPS ? FPS : MaxFps;
+
+
+		ImGui::SetNextWindowPos(ImGui::GetWindowPos(), ImGuiCond_Always, { 0.5f, 0.5f });
+		ImGui::Begin("FPS Counter", (bool*)0, imGuiWindowFlags);
+		{
+			//ImGui::SetWindowFontScale(1.2f);
+			ImGui::TextColored(getTextColor(FPS), "FPS: %3.0f", FPS);
+			//ImGui::TextColored(getTextColor(MinFps), "Min: %3.0f", MinFps);
+			//ImGui::TextColored(getTextColor(MaxFps), "Max: %3.0f", MaxFps);
+		}
+		ImGui::End();
+	}
+
+
+
 	void ImGuiLayer::onImGuiRender()
 	{
-		static bool show = true;
-		ImGui::ShowDemoWindow(&show);
+
+		drawFpsCounter();
 
 		ImGui::Begin("Renderer");
 
@@ -105,6 +175,8 @@ namespace GameLamp {
 		ImGui::Text("Vendor: %s", glGetString(GL_VENDOR));
 		ImGui::Text("Renderer: %s", glGetString(GL_RENDERER));
 		ImGui::Text("Version: %s", glGetString(GL_VERSION));
+
+		//ImGui::ColorEdit3("ColorPicker", (float*)&color, ImGuiColorEditFlags_Uint8);
 
 		ImGui::End();
 	}

@@ -90,6 +90,9 @@
     <ClInclude Include="src\GameLamp\Core\PlatformDetection.h">
       <Filter>src\GameLamp\Core</Filter>
     </ClInclude>
+    <ClInclude Include="src\GameLamp\Core\Timestep.h">
+      <Filter>src\GameLamp\Core</Filter>
+    </ClInclude>
     <ClInclude Include="src\GameLamp\Core\Window.h">
       <Filter>src\GameLamp\Core</Filter>
     </ClInclude>
@@ -111,7 +114,19 @@
     <ClInclude Include="src\GameLamp\Platform\OpenGL\OpenGLBuffer.h">
       <Filter>src\GameLamp\Platform\OpenGL</Filter>
     </ClInclude>
+    <ClInclude Include="src\GameLamp\Platform\OpenGL\OpenGLCommon.h">
+      <Filter>src\GameLamp\Platform\OpenGL</Filter>
+    </ClInclude>
     <ClInclude Include="src\GameLamp\Platform\OpenGL\OpenGLContext.h">
+      <Filter>src\GameLamp\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameLamp\Platform\OpenGL\OpenGLRendererAPI.h">
+      <Filter>src\GameLamp\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameLamp\Platform\OpenGL\OpenGLShader.h">
+      <Filter>src\GameLamp\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameLamp\Platform\OpenGL\OpenGLVertexArray.h">
       <Filter>src\GameLamp\Platform\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="src\GameLamp\Platform\Windows\WindowsInput.h">
@@ -126,10 +141,22 @@
     <ClInclude Include="src\GameLamp\Renderer\GraphicsContext.h">
       <Filter>src\GameLamp\Renderer</Filter>
     </ClInclude>
+    <ClInclude Include="src\GameLamp\Renderer\OrthographicCamera.h">
+      <Filter>src\GameLamp\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameLamp\Renderer\RenderCommand.h">
+      <Filter>src\GameLamp\Renderer</Filter>
+    </ClInclude>
     <ClInclude Include="src\GameLamp\Renderer\Renderer.h">
       <Filter>src\GameLamp\Renderer</Filter>
     </ClInclude>
+    <ClInclude Include="src\GameLamp\Renderer\RendererAPI.h">
+      <Filter>src\GameLamp\Renderer</Filter>
+    </ClInclude>
     <ClInclude Include="src\GameLamp\Renderer\Shader.h">
+      <Filter>src\GameLamp\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameLamp\Renderer\VertexArray.h">
       <Filter>src\GameLamp\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\pch.h">
@@ -1397,6 +1424,9 @@
     <ClCompile Include="src\GameLamp\Core\Log.cpp">
       <Filter>src\GameLamp\Core</Filter>
     </ClCompile>
+    <ClCompile Include="src\GameLamp\Core\Timestep.cpp">
+      <Filter>src\GameLamp\Core</Filter>
+    </ClCompile>
     <ClCompile Include="src\GameLamp\ImGui\ImGuiBuild.cpp">
       <Filter>src\GameLamp\ImGui</Filter>
     </ClCompile>
@@ -1409,6 +1439,15 @@
     <ClCompile Include="src\GameLamp\Platform\OpenGL\OpenGLContext.cpp">
       <Filter>src\GameLamp\Platform\OpenGL</Filter>
     </ClCompile>
+    <ClCompile Include="src\GameLamp\Platform\OpenGL\OpenGLRendererAPI.cpp">
+      <Filter>src\GameLamp\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameLamp\Platform\OpenGL\OpenGLShader.cpp">
+      <Filter>src\GameLamp\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameLamp\Platform\OpenGL\OpenGLVertexArray.cpp">
+      <Filter>src\GameLamp\Platform\OpenGL</Filter>
+    </ClCompile>
     <ClCompile Include="src\GameLamp\Platform\Windows\WindowsInput.cpp">
       <Filter>src\GameLamp\Platform\Windows</Filter>
     </ClCompile>
@@ -1418,10 +1457,22 @@
     <ClCompile Include="src\GameLamp\Renderer\Buffer.cpp">
       <Filter>src\GameLamp\Renderer</Filter>
     </ClCompile>
+    <ClCompile Include="src\GameLamp\Renderer\OrthographicCamera.cpp">
+      <Filter>src\GameLamp\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameLamp\Renderer\RenderCommand.cpp">
+      <Filter>src\GameLamp\Renderer</Filter>
+    </ClCompile>
     <ClCompile Include="src\GameLamp\Renderer\Renderer.cpp">
       <Filter>src\GameLamp\Renderer</Filter>
     </ClCompile>
+    <ClCompile Include="src\GameLamp\Renderer\RendererAPI.cpp">
+      <Filter>src\GameLamp\Renderer</Filter>
+    </ClCompile>
     <ClCompile Include="src\GameLamp\Renderer\Shader.cpp">
+      <Filter>src\GameLamp\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameLamp\Renderer\VertexArray.cpp">
       <Filter>src\GameLamp\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\pch.cpp">
