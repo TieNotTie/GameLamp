@@ -10,4 +10,4 @@
 	url = https://github.com/gabime/spdlog.git
 [submodule "GameLamp/vendor/glfw"]
 	path = GameLamp/vendor/glfw
-	url = https://github.com/glfw/glfw.git
+	url = https://github.com/TieNotTie/glfw
