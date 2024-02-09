@@ -1,8 +1,6 @@
 #include "Hello.hpp"
-#include <stdio.h>
 
-void printHello()
+void printHello() 
 {
-    printf("Hello World!\n");
-
+	printf("Zip file");
 }

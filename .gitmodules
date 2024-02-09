@@ -1,0 +1,13 @@
+[submodule "GameLamp/vendor/imgui"]
+	path = GameLamp/vendor/imgui
+	url = https://github.com/TieNotTie/imgui.git
+	branch = docking
+[submodule "GameLamp/vendor/glm"]
+	path = GameLamp/vendor/glm
+	url = https://github.com/g-truc/glm.git
+[submodule "GameLamp/vendor/spdlog"]
+	path = GameLamp/vendor/spdlog
+	url = https://github.com/gabime/spdlog.git
+[submodule "GameLamp/vendor/glfw"]
+	path = GameLamp/vendor/glfw
+	url = https://github.com/glfw/glfw.git

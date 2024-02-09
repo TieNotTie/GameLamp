@@ -11,9 +11,6 @@ project "Sandbox"
         "src/**.cpp",
     }
 
-    IncludeDir = {}
-    IncludeDir["GameLamp"] = "../GameLamp/src/**.hpp"
-
     includedirs
     {
         "../GameLamp/src/",

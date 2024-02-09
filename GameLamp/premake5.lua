@@ -10,3 +10,19 @@ project "GameLamp"
         "src/**.hpp",
         "src/**.cpp",
     }
+
+    includedirs
+    {
+        "vendor/glm/glm",
+        "vendor/spdlog/include",
+        "vendor/imgui",
+        "vendor/glfw/include",
+        "vendor/glad/include",
+    }
+    
+    links 
+    {
+        "GLFW",
+        "ImGui",
+        "GLAD", 
+    }
