@@ -1,8 +1,14 @@
-#include "Hello.hpp"
+#include "Core/EntryPoint.h"
 
-int main()
+class MyApplication : public Lamp::Application
 {
-    printHello();
+public:
+	virtual void init(int arhc, char** argv) override {}
+	virtual void tick(float delta = 0.0f) override {}
+	virtual void shutdown() override {}
+};
 
-    return 0;
+Lamp::Application* CreateApplication(int argc, char** argv)
+{
+	return new MyApplication;
 }
