@@ -1,7 +1,7 @@
 # Release 0.1.0 - TARGET - Render basic 3d scene
-- [ ] Setup premake for Visual Studio 2022 [Issue](https://github.com/TieNotTie/GameLamp/issues/2)
-- [ ] Add as submodules to project OpenGL, ImGui, glm, spdlog [Issue](https://github.com/TieNotTie/GameLamp/issues/3)
-- [ ] Create a window [Issue](https://github.com/TieNotTie/GameLamp/issues/4)
+- [X] Setup premake for Visual Studio 2022 [Issue](https://github.com/TieNotTie/GameLamp/issues/2)
+- [x] Add as submodules to project OpenGL, ImGui, glm, spdlog [Issue](https://github.com/TieNotTie/GameLamp/issues/3)
+- [x] Create a window [Issue](https://github.com/TieNotTie/GameLamp/issues/4)
 - [ ] Add handling key events [Issue](https://github.com/TieNotTie/GameLamp/issues/5)
 - [ ] Add abstractions for Rendering calls [Issue](https://github.com/TieNotTie/GameLamp/issues/6)
 - [ ] Implement shader classes [Issue](https://github.com/TieNotTie/GameLamp/issues/7)

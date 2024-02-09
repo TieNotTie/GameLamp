@@ -4,6 +4,12 @@ project "GameLamp"
     targetdir ("../bin/" .. outputdir .. "/%{prj.name}")
     objdir ("../bin-int/" .. outputdir .. "/%{prj.name}")
 
+    filter "system:windows"
+		defines 
+		{ 
+			"GL_PLATFORM_WINDOWS",
+		}
+
     files {
         "src/**.h",
         "src/**.c",
@@ -13,6 +19,7 @@ project "GameLamp"
 
     includedirs
     {
+        "src/",
         "vendor/glm/glm",
         "vendor/spdlog/include",
         "vendor/imgui",
@@ -25,4 +32,5 @@ project "GameLamp"
         "GLFW",
         "ImGui",
         "GLAD", 
+        "opengl32.lib"
     }
