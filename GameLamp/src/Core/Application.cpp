@@ -4,31 +4,35 @@
 #include "Platform/Windows/WindowsWindow.h"
 #endif
 
+#include "Core/Core.h"
+
 namespace Lamp {
 
 	extern bool g_IsRunning;
 
 	Application::Application()
 	{
-#ifdef GL_PLATFORM_WINDOWS
 		m_Window = Window::create();
-#else
-		assert(1 && "Platform not supported!")
-#endif
-
+		CoreInit();
 	}
 
 	int Application::run(int argc, char** argv)
 	{
+		float delta = .0f;
 		// Main Game loop
 		while (g_IsRunning)
 		{
-			// TODO: Add OpenGL update
-			m_Window->tick();
-			tick();
+			tickInternal(delta);
+			tick(delta);
 		}
 
 		return 0;
+	}
+
+	void Application::tickInternal(float delta)
+	{
+		// TODO: Add OpenGL update
+		m_Window->tick(delta);
 	}
 
 }

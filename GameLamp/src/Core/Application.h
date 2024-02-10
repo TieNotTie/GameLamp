@@ -16,6 +16,10 @@ namespace Lamp {
 		virtual void shutdown() {}
 
 	private:
+
+		void tickInternal(float delta);
+
+	private:
 		Window* m_Window = nullptr;
 	};
 

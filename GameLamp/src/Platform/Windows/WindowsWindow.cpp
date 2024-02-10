@@ -68,7 +68,7 @@ namespace Lamp {
 
 	void WindowsWindow::init(const WindowProperties& props)
 	{
-		if (!glfwInit()) assert(1 && "Failed to initialize GLFW");
+		if (!glfwInit()) assert(0 && "Failed to initialize GLFW");
 
 		m_Window = glfwCreateWindow(props.Width, props.Height, props.Name.c_str(), nullptr, nullptr);
 
