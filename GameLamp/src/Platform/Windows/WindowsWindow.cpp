@@ -21,7 +21,7 @@ namespace Lamp {
 		shutdown();
 	}
 
-	void WindowsWindow::tick(float delta /*= 0.0f*/)
+	void WindowsWindow::tick(double delta)
 	{
 		glClearColor(16.0f / 255.0f, 76.0f / 255.0f, 145.0f / 255.0f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);

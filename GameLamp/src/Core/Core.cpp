@@ -1,11 +1,18 @@
 #include "Core.h"
 
+#include "Util/Time.h"
+
+#include <cassert>
 
 namespace Lamp {
 
-	int CoreInit()
+	bool CoreInit()
 	{
-		int result = 0;
+		bool result = true;
+
+		result = SetupTimeMeasurement();
+		assert(result && "Failed to Setup Time Measurement");
+
 
 		return result;
 	}

@@ -15,7 +15,7 @@ namespace Lamp {
 	public:
 		virtual ~Window() = default;
 
-		virtual void tick(float delta = 0.0f) = 0;
+		virtual void tick(double delta = 0.0) = 0;
 
 		virtual uint32_t getWidth() const = 0;
 		virtual uint32_t getHeight() const = 0;

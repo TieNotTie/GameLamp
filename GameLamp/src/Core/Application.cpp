@@ -5,6 +5,9 @@
 #endif
 
 #include "Core/Core.h"
+#include "Util/Time.h"
+
+#include <cassert>
 
 namespace Lamp {
 
@@ -13,15 +16,21 @@ namespace Lamp {
 	Application::Application()
 	{
 		m_Window = Window::create();
-		CoreInit();
+		bool result = CoreInit();
+
+		assert(result && "Failed to init core modules");
 	}
 
 	int Application::run(int argc, char** argv)
 	{
-		float delta = .0f;
+		double delta = .0f;
+
 		// Main Game loop
 		while (g_IsRunning)
 		{
+			UpdateDeltaTime();
+			delta = GetDeltaTime();
+
 			tickInternal(delta);
 			tick(delta);
 		}
@@ -29,7 +38,7 @@ namespace Lamp {
 		return 0;
 	}
 
-	void Application::tickInternal(float delta)
+	void Application::tickInternal(double delta)
 	{
 		// TODO: Add OpenGL update
 		m_Window->tick(delta);

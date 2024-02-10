@@ -4,7 +4,7 @@ class MyApplication : public Lamp::Application
 {
 public:
 	virtual void init(int arhc, char** argv) override {}
-	virtual void tick(float delta = 0.0f) override {}
+	virtual void tick(double delta = 0.0) override {}
 	virtual void shutdown() override {}
 };
 

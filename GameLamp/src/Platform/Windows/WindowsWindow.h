@@ -9,7 +9,7 @@ namespace Lamp {
 		WindowsWindow(const WindowProperties& props);
 		virtual ~WindowsWindow();
 
-		virtual void tick(float delta = 0.0f) override;
+		virtual void tick(double delta = 0.0) override;
 
 		virtual uint32_t getWidth() const override;
 		virtual uint32_t getHeight() const override;
