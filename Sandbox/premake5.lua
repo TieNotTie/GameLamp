@@ -14,6 +14,7 @@ project "Sandbox"
     includedirs
     {
         "../GameLamp/src/",
+        "../GameLamp/vendor/spdlog/include",
     }
 
     links
