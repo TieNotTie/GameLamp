@@ -1,6 +1,5 @@
 workspace "GameLamp"
     architecture "x64"
-    
 
     -- TODO: Change to real
     startproject "Sandbox"
@@ -10,6 +9,15 @@ workspace "GameLamp"
         "Release",
         "Shipping"
     }
+
+    filter "configurations:Debug"
+        defines { "GL_DEBUG_BUILD" }
+
+    filter "configurations:Release"
+        defines { "GL_RELEASE_BUILD" }
+      
+    filter "configurations:Shipping"
+        defines { "GL_SHIPPING_BUILD" }
 
 language "C++"
 cppdialect "C++20"
