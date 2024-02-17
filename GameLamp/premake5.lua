@@ -4,12 +4,6 @@ project "GameLamp"
     targetdir ("../bin/" .. outputdir .. "/%{prj.name}")
     objdir ("../bin-int/" .. outputdir .. "/%{prj.name}")
 
-    filter "system:windows"
-		defines 
-		{ 
-			"GL_PLATFORM_WINDOWS",
-		}
-
     files {
         "src/**.h",
         "src/**.c",

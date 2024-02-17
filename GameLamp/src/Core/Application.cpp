@@ -1,6 +1,6 @@
 #include "Application.h"
 
-#ifdef GL_PLATFORM_WINDOWS
+#if GL_PLATFORM_WINDOWS
 #include "Platform/Windows/WindowsWindow.h"
 #endif
 

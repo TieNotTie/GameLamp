@@ -18,6 +18,12 @@ workspace "GameLamp"
       
     filter "configurations:Shipping"
         defines { "GL_SHIPPING_BUILD" }
+    
+    filter "system:windows"
+		defines 
+		{ 
+			"GL_PLATFORM_WINDOWS=1",
+		}
 
 language "C++"
 cppdialect "C++20"

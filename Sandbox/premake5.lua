@@ -1,5 +1,5 @@
 project "Sandbox"
-    kind "ConsoleApp"
+    kind "WindowedApp"
 
     targetdir ("../bin/" .. outputdir .. "/%{prj.name}")
     objdir ("../bin-int/" .. outputdir .. "/%{prj.name}")
