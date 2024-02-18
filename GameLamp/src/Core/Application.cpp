@@ -5,9 +5,8 @@
 #endif
 
 #include "Core/Core.h"
+#include "Core/Log.h"
 #include "Util/Time.h"
-
-#include <cassert>
 
 namespace Lamp {
 
@@ -18,7 +17,7 @@ namespace Lamp {
 		m_Window = Window::create();
 		bool result = CoreInit();
 
-		assert(result && "Failed to init core modules");
+		GL_CORE_ASSERT(result && "Failed to init core modules");
 	}
 
 	int Application::run(int argc, char** argv)

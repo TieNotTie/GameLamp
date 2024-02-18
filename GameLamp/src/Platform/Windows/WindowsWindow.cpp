@@ -1,8 +1,10 @@
 #include "WindowsWindow.h"
 
+#include "Core/Log.h"
+
 #include <GLFW/glfw3.h>
 
-#include <cassert>
+#include <Windows.h>
 
 namespace Lamp {
 	Window* Window::create(const WindowProperties& props)
@@ -61,6 +63,20 @@ namespace Lamp {
 		m_WindowProperties.isVSync = enableVSync;
 	}
 
+	bool WindowsWindow::isConsoleEnabled() const
+	{
+		return m_WindowProperties.isConsoleEnabled;
+	}
+
+	void WindowsWindow::enableConsole(bool enable)
+	{
+		if (m_WindowProperties.isConsoleEnabled == enable) return;
+		
+		enable == true ? AllocConsole() : FreeConsole();
+
+		m_WindowProperties.isConsoleEnabled = enable;
+	}
+
 	void* WindowsWindow::getNativeWindow() const
 	{
 		return (void*)m_Window;
@@ -68,14 +84,16 @@ namespace Lamp {
 
 	void WindowsWindow::init(const WindowProperties& props)
 	{
-		if (!glfwInit()) assert(0 && "Failed to initialize GLFW");
+		if (props.isConsoleEnabled) AllocConsole();
+
+		GL_CORE_ASSERT((glfwInit() == GLFW_TRUE) && "Failed to initialize GLFW");
 
 		m_Window = glfwCreateWindow(props.Width, props.Height, props.Name.c_str(), nullptr, nullptr);
 
 		if (!m_Window)
 		{
 			glfwTerminate();
-			assert(1 && "Failed to create a window!");
+			GL_CORE_ASSERT(0 && "Failed to create a window!");
 		}
 
 		glfwMakeContextCurrent(m_Window);

@@ -8,6 +8,7 @@ namespace Lamp {
 		std::string Name = "Game Lamp Engine";
 		uint32_t Width = 1080, Height = 720;
 		bool isVSync = false;
+		bool isConsoleEnabled = true;
 	};
 
 	class Window
@@ -25,6 +26,9 @@ namespace Lamp {
 
 		virtual bool isVSync() const = 0;
 		virtual void setVSync(bool) = 0;
+
+		virtual bool isConsoleEnabled() const = 0;
+		virtual void enableConsole(bool) = 0;
 
 		virtual void* getNativeWindow() const = 0;
 

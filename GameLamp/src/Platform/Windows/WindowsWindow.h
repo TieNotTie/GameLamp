@@ -20,6 +20,9 @@ namespace Lamp {
 		virtual bool isVSync() const override;
 		virtual void setVSync(bool) override;
 
+		virtual bool isConsoleEnabled() const override;
+		virtual void enableConsole(bool) override;
+
 		virtual void* getNativeWindow() const override;
 
 	private:
