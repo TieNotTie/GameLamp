@@ -10,10 +10,10 @@ namespace Lamp
 	void Logger::Init() 
 	{
 		spdlog::set_pattern("%^[%T] %n: %v%$");
-		m_CoreLogger = spdlog::stdout_color_mt("GAME_LAMP");
+		m_CoreLogger = spdlog::stdout_color_mt("Engine");
 		m_CoreLogger->set_level(spdlog::level::trace);
 
-		m_ClientLogger = spdlog::stdout_color_mt("SANDBOX");
+		m_ClientLogger = spdlog::stdout_color_mt("App");
 		m_ClientLogger->set_level(spdlog::level::trace);
 	}
 }
