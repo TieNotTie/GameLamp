@@ -11,6 +11,8 @@ project "GameLamp"
         "src/**.cpp",
     }
 
+    flags { "MultiProcessorCompile" }
+
     includedirs
     {
         "src/",
@@ -20,7 +22,7 @@ project "GameLamp"
         "vendor/glfw/include",
         "vendor/glad/include",
     }
-    
+
     links 
     {
         "GLFW",

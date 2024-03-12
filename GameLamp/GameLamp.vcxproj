@@ -123,19 +123,30 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="src\Core\Application.h" />
-    <ClInclude Include="src\Core\Core.h" />
+    <ClInclude Include="src\Core\CoreInitializer.h" />
     <ClInclude Include="src\Core\EntryPoint.h" />
     <ClInclude Include="src\Core\Log.h" />
+    <ClInclude Include="src\Input\Events.h" />
+    <ClInclude Include="src\Input\IEventHandler.h" />
+    <ClInclude Include="src\Input\InputCoreTypes.h" />
+    <ClInclude Include="src\Input\PlatformInputEventHandler.h" />
+    <ClInclude Include="src\GameLamp.h" />
+    <ClInclude Include="src\Input\SlateApplicationInput.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
+    <ClInclude Include="src\Util\Base.h" />
+    <ClInclude Include="src\Util\EnumCasts.h" />
+    <ClInclude Include="src\Util\Position.h" />
     <ClInclude Include="src\Util\Time.h" />
     <ClInclude Include="src\Window\Window.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Core\Application.cpp" />
-    <ClCompile Include="src\Core\Core.cpp" />
-    <ClCompile Include="src\Core\Globals.cpp" />
+    <ClCompile Include="src\Core\CoreInitializer.cpp" />
     <ClCompile Include="src\Core\Log.cpp" />
-    <ClCompile Include="src\Platform\Windows\Time.cpp" />
+    <ClCompile Include="src\Input\InputCoreTypes.cpp" />
+    <ClCompile Include="src\Input\SlateApplicationInput.cpp" />
+    <ClCompile Include="src\Platform\ImGuiOpenGL.cpp" />
+    <ClCompile Include="src\Platform\Windows\WindowsTime.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
   </ItemGroup>
   <ItemGroup>

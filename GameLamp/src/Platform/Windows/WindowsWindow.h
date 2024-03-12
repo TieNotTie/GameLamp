@@ -1,4 +1,9 @@
+#pragma once
+
 #include "Window/Window.h"
+
+//#include "Event/EventDispatcher.h"
+#include "Input/PlatformInputEventHandler.h"
 
 struct GLFWwindow;
 
@@ -10,6 +15,7 @@ namespace Lamp {
 		virtual ~WindowsWindow();
 
 		virtual void tick(double delta = 0.0) override;
+		virtual void closeWindow() override;
 
 		virtual uint32_t getWidth() const override;
 		virtual uint32_t getHeight() const override;
@@ -25,6 +31,9 @@ namespace Lamp {
 
 		virtual void* getNativeWindow() const override;
 
+		virtual struct Position2D getMousePosition() const override;
+		virtual void setMousePosition(struct Position2D) override;
+
 	private:
 		void init(const WindowProperties& props);
 		void shutdown();
@@ -33,6 +42,15 @@ namespace Lamp {
 		GLFWwindow* m_Window;
 
 		WindowProperties m_WindowProperties;
+
+	private:
+
+		struct WindowData
+		{
+			std::shared_ptr<PlatformInputEventHandler> PlatfromInputHandler;
+		};
+
+		WindowData m_WindowData;
 	};
 
 }

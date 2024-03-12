@@ -1,14 +1,13 @@
 #pragma once 
 #include "Core/Application.h"
-#include "Core/Core.h"
-#include "Core/Log.h"
 
 #if GL_PLATFORM_WINDOWS
 #include <Windows.h>
 #endif
 
-#include <future>
-
+/*
+ * Has to be defined in user application
+ */
 extern Lamp::Application* CreateApplication(int argc, char** argv);
 
 #if GL_PLATFORM_WINDOWS

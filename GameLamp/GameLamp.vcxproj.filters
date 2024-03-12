@@ -21,7 +21,7 @@
     <ClInclude Include="src\Core\Application.h">
       <Filter>Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\Core\Core.h">
+    <ClInclude Include="src\Core\CoreInitializer.h">
       <Filter>Core</Filter>
     </ClInclude>
     <ClInclude Include="src\Core\EntryPoint.h">
@@ -30,8 +30,15 @@
     <ClInclude Include="src\Core\Log.h">
       <Filter>Core</Filter>
     </ClInclude>
+    <ClInclude Include="src\GameLamp.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
       <Filter>Platform\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Util\Base.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Util\EnumCasts.h">
+      <Filter>Util</Filter>
     </ClInclude>
     <ClInclude Include="src\Util\Time.h">
       <Filter>Util</Filter>
@@ -39,25 +46,31 @@
     <ClInclude Include="src\Window\Window.h">
       <Filter>Window</Filter>
     </ClInclude>
+    <ClInclude Include="src\Input\PlatformInputEventHandler.h" />
+    <ClInclude Include="src\Input\IEventHandler.h" />
+    <ClInclude Include="src\Input\InputCoreTypes.h" />
+    <ClInclude Include="src\Input\Events.h" />
+    <ClInclude Include="src\Util\Position.h" />
+    <ClInclude Include="src\Input\SlateApplicationInput.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Core\Application.cpp">
       <Filter>Core</Filter>
     </ClCompile>
-    <ClCompile Include="src\Core\Core.cpp">
-      <Filter>Core</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Core\Globals.cpp">
+    <ClCompile Include="src\Core\CoreInitializer.cpp">
       <Filter>Core</Filter>
     </ClCompile>
     <ClCompile Include="src\Core\Log.cpp">
       <Filter>Core</Filter>
     </ClCompile>
-    <ClCompile Include="src\Platform\Windows\Time.cpp">
+    <ClCompile Include="src\Platform\Windows\WindowsTime.cpp">
       <Filter>Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
       <Filter>Platform\Windows</Filter>
     </ClCompile>
+    <ClCompile Include="src\Input\InputCoreTypes.cpp" />
+    <ClCompile Include="src\Platform\ImGuiOpenGL.cpp" />
+    <ClCompile Include="src\Input\SlateApplicationInput.cpp" />
   </ItemGroup>
 </Project>

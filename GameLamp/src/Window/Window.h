@@ -3,8 +3,11 @@
 
 namespace Lamp {
 
+	using WindowId_t = uint32_t;
+
 	struct WindowProperties
 	{
+
 		std::string Name = "Game Lamp Engine";
 		uint32_t Width = 1080, Height = 720;
 		bool isVSync = false;
@@ -14,9 +17,12 @@ namespace Lamp {
 	class Window
 	{
 	public:
+		Window() = default;
 		virtual ~Window() = default;
 
 		virtual void tick(double delta = 0.0) = 0;
+
+		virtual void closeWindow() = 0;
 
 		virtual uint32_t getWidth() const = 0;
 		virtual uint32_t getHeight() const = 0;
@@ -32,7 +38,11 @@ namespace Lamp {
 
 		virtual void* getNativeWindow() const = 0;
 
+		virtual struct Position2D getMousePosition() const = 0;
+		virtual void setMousePosition(struct Position2D) = 0;
+
 		static Window* create(const WindowProperties& props = WindowProperties());
+
 	};
 
 }
